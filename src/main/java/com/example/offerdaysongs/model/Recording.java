@@ -3,15 +3,9 @@ package com.example.offerdaysongs.model;
 import liquibase.pro.packaged.E;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.Collection;
 import java.util.List;
 
 @Data
@@ -26,4 +20,7 @@ public class Recording {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id", insertable = false, updatable = false)
     Singer singer;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    Collection<Copyright> copyrightCollection;
 }

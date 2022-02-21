@@ -24,3 +24,19 @@ INSERT INTO recording (song_code, title, version, release_time, singer_id ) VALU
 
 INSERT INTO recording (song_code, title, version, release_time, singer_id ) VALUES
 ('SN 127', 'Nothing else matters', '1', '1991-01-15', 4);
+
+
+INSERT INTO copyright (start_time, end_time, fee, company_id, recording_id) VALUES
+    ('1008-01-15', '2038-01-15', 1.57, 1, 1);
+
+INSERT INTO copyright (start_time, end_time, fee, company_id, recording_id) VALUES
+    ('2028-01-15', '2038-01-15', 2.73, 2, 1);
+
+INSERT INTO copyright (start_time, end_time, fee, company_id, recording_id) VALUES
+    ('2019-01-15', '2024-01-15', 1.82, 3, 3);
+
+INSERT INTO copyright (start_time, end_time, fee, company_id, recording_id) VALUES
+    ('2019-01-15', '2024-01-15', 3.54, 4, 3);
+
+INSERT INTO copyright (start_time, end_time, fee, company_id, recording_id) VALUES
+    ('2019-01-15', '2020-01-15', 2.85, 2, 3);

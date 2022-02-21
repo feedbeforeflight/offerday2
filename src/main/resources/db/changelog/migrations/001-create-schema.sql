@@ -20,3 +20,12 @@ CREATE TABLE company
     name         VARCHAR(256)
 );
 
+CREATE TABLE copyright
+(
+    id              BIGSERIAL PRIMARY KEY,
+    start_time      TIMESTAMP,
+    end_time        TIMESTAMP,
+    fee             NUMERIC(20, 2),
+    company_id      BIGINT REFERENCES company (id),
+    recording_id    BIGINT REFERENCES recording (id)
+);

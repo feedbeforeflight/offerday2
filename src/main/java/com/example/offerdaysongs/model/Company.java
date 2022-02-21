@@ -2,10 +2,8 @@ package com.example.offerdaysongs.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Data
 @Entity
@@ -14,4 +12,9 @@ public class Company {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
     String name;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id", insertable = false, updatable = false)
+    Collection<Copyright> copyrightCollection;
+
 }
